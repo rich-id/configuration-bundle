@@ -41,6 +41,7 @@
     </coverage>
 
     <extensions>
+        <extension class="RichId\ConfigurationBundle\Tests\Resources\PHPUnitExtension"/>
         <extension class="RichCongress\TestFramework\PHPUnitExtension">
             <arguments>
                 <string>RichCongress\WebTestBundle\TestHook</string>

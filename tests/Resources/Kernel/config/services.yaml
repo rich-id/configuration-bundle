@@ -3,3 +3,15 @@ services:
         autoconfigure: true
         autowire: true
         public: true
+
+    RichId\ConfigurationBundle\Tests\Resources\Command\:
+        resource: '../../Command/'
+
+    RichId\ConfigurationBundle\Tests\Resources\Configurations\:
+        resource: '../../Configurations/'
+
+    RichId\ConfigurationBundle\Tests\Resources\Fixtures\:
+        resource: '../../Fixtures/'
+
+    RichId\ConfigurationBundle\Tests\Resources\Stub\:
+        resource: '../../Stub/'

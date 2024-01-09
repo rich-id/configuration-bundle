@@ -25,6 +25,10 @@ jobs:
               run: |
                   docker-compose exec -T application composer install --prefer-dist --no-interaction --no-progress
 
+            - name: Transitive dependencies check
+              run: |
+                  docker-compose exec -T application ./vendor/bin/composer-require-checker check composer.json --config-file=.composer-require-checker.json
+
             - name: Execute the tests 🔧
               run: |
                   docker-compose exec -T application php -d extension=pcov.so ./vendor/bin/phpunit --configuration phpunit.xml.dist --colors=never --coverage-text --log-junit reports/junit.xml --coverage-html reports/coverage --coverage-clover build/logs/clover.xml

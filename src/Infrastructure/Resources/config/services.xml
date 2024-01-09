@@ -11,11 +11,17 @@
 
         <prototype namespace="RichId\ConfigurationBundle\Domain\"
                    resource="../../../Domain"
+                   exclude="../../../Domain/EventListener/LoadConfigurationsAfterMigrationExecutedListener.php"
         />
 
         <!-- Infrastructure -->
         <prototype namespace="RichId\ConfigurationBundle\Infrastructure\"
                    resource="../../../Infrastructure"
+        />
+
+        <!-- UserInterface -->
+        <prototype namespace="RichId\ConfigurationBundle\UserInterface\"
+                   resource="../../../UserInterface"
         />
     </services>
 </container>
