@@ -9,7 +9,7 @@ use RichCongress\TestSuite\TestCase\TestCase;
 use RichId\ConfigurationBundle\Domain\Port\ConfigurationVersionRepositoryInterface;
 
 /**
- * @covers \RichId\ConfigurationBundle\Infrastructure\Adapter\ConfigurationAdapter
+ * @covers \RichId\ConfigurationBundle\Infrastructure\Adapter\ConfigurationVersionRepositoryAdapter
  * @covers \RichId\ConfigurationBundle\Infrastructure\Repository\ConfigurationVersionRepository
  */
 #[TestConfig('fixtures')]

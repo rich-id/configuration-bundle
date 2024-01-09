@@ -8,10 +8,7 @@ use RichCongress\TestFramework\TestConfiguration\Annotation\TestConfig;
 use RichCongress\TestSuite\TestCase\TestCase;
 use RichId\ConfigurationBundle\Domain\Entity\ConfigurationVersion;
 
-/**
- * @covers \RichId\ConfigurationBundle\Domain\Configuration\AbstractConfiguration
- * @covers \RichId\ConfigurationBundle\Domain\Configuration\ConfigurationManager
- */
+/** @covers \RichId\ConfigurationBundle\Domain\Entity\ConfigurationVersion */
 #[TestConfig('fixtures')]
 final class ConfigurationVersionTest extends TestCase
 {

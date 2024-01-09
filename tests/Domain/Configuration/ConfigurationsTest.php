@@ -8,6 +8,7 @@ use RichCongress\TestFramework\TestConfiguration\Annotation\TestConfig;
 use RichCongress\TestSuite\TestCase\TestCase;
 use RichId\ConfigurationBundle\Domain\Configuration\ConfigurationManager;
 use RichId\ConfigurationBundle\Domain\Entity\ConfigurationVersion;
+use RichId\ConfigurationBundle\Tests\Resources\Configurations\Version20240109124805;
 use RichId\ConfigurationBundle\Tests\Resources\Configurations\Version20240109124806;
 use RichId\ConfigurationBundle\Tests\Resources\Configurations\Version20240109124807;
 use RichId\ConfigurationBundle\Tests\Resources\Configurations\Version20240109124808;
@@ -20,6 +21,8 @@ use RichId\ConfigurationBundle\Tests\Resources\Configurations\Version20240109124
 final class ConfigurationsTest extends TestCase
 {
     public ConfigurationManager $configurationManager;
+
+    public Version20240109124805 $version20240109124805;
 
     public Version20240109124806 $version20240109124806;
 
@@ -49,9 +52,34 @@ final class ConfigurationsTest extends TestCase
     {
         self::assertSame(1, $this->countConfigurationVersion());
 
-        $this->configurationManager->loadConfiguration($this->version20240109124806);
+        $output = $this->configurationManager->loadConfiguration($this->version20240109124806);
 
+        self::assertTrue($output);
         self::assertSame(2, $this->countConfigurationVersion());
+    }
+
+    public function testCommandExecuteSpecificVersionNameAlreadyExecuted(): void
+    {
+        self::assertSame(1, $this->countConfigurationVersion());
+
+        $output = $this->configurationManager->loadConfiguration($this->version20240109124805);
+
+        self::assertFalse($output);
+        self::assertSame(1, $this->countConfigurationVersion());
+    }
+
+    public function testFindOneByVersionName(): void
+    {
+        $output = $this->configurationManager->findOneByVersionName('Version20240109124805');
+
+        self::assertSame($this->version20240109124805, $output);
+    }
+
+    public function testFindOneByVersionNameNotFound(): void
+    {
+        $output = $this->configurationManager->findOneByVersionName('Version20240109124805Bis');
+
+        self::assertNull($output);
     }
 
     private function countConfigurationVersion(): int

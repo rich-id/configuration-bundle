@@ -18,21 +18,13 @@ class ConfigurationAdapter implements ConfigurationInterface
     {
         $conf = Configuration::get('configuration_namespace', $this->parameterBag);
 
-        if (!\is_string($conf)) {
-            throw new \InvalidArgumentException('Configuration "configuration_namespace" must be of type string.');
-        }
-
-        return $conf;
+        return \is_string($conf) ? $conf : throw new \InvalidArgumentException('Configuration "configuration_namespace" must be of type string.');
     }
 
     public function getConfigurationPath(): string
     {
         $conf = Configuration::get('configuration_path', $this->parameterBag);
 
-        if (!\is_string($conf)) {
-            throw new \InvalidArgumentException('Configuration "configuration_namespace" must be of type string.');
-        }
-
-        return $conf;
+        return \is_string($conf) ? $conf : throw new \InvalidArgumentException('Configuration "configuration_path" must be of type string.');
     }
 }
