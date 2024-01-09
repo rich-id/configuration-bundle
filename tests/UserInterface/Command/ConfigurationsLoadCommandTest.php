@@ -95,4 +95,3 @@ final class ConfigurationsLoadCommandTest extends CommandTestCase
         $this->getManager()->flush();
     }
 }
-

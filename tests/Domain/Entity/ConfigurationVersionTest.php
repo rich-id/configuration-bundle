@@ -27,4 +27,3 @@ final class ConfigurationVersionTest extends TestCase
         self::assertSame($date, $entity->getExecutedAt());
     }
 }
-

@@ -70,4 +70,3 @@ final class ConfigurationsTest extends TestCase
         $this->getManager()->flush();
     }
 }
-

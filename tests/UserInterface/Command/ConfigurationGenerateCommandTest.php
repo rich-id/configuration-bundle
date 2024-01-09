@@ -39,4 +39,3 @@ final class ConfigurationGenerateCommandTest extends CommandTestCase
         self::assertStringContainsString('/tests/Resources/Files/tmp/', $output);
     }
 }
-
