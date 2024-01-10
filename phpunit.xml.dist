@@ -36,6 +36,7 @@
             <directory>src/Infrastructure/Migrations</directory>
             <directory>src/Infrastructure/Resources</directory>
             <directory>src/Infrastructure/TestCase</directory>
+            <file>src/Domain/Helper/SqlConfigurationHelperTrait.php</file>
             <file>src/Infrastructure/RichIdConfigurationBundle.php</file>
         </exclude>
     </coverage>

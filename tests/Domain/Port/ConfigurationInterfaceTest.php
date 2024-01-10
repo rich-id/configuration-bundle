@@ -35,7 +35,7 @@ final class ConfigurationInterfaceTest extends TestCase
     }
 
 
-    public function testGetConfigurationTemplatePathCsutomValue(): void
+    public function testGetConfigurationTemplatePathCustomValue(): void
     {
         $this->configurationAdapterStub->setConfigurationTemplatePath('/tests/Resources/configuration_template.php.txt');
         $conf = $this->configuration->getConfigurationTemplatePath();
