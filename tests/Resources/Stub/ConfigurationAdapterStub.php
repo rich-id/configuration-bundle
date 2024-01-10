@@ -37,13 +37,9 @@ class ConfigurationAdapterStub extends ConfigurationAdapter implements OverrideS
         return $this->innerService->getConfigurationPath();
     }
 
-    public function getConfigurationTemplatePath(): string
+    public function getConfigurationTemplatePath(): ?string
     {
-        if ($this->configurationTemplatePath !== null) {
-            return $this->configurationTemplatePath;
-        }
-
-        return $this->innerService->getConfigurationTemplatePath();
+        return $this->configurationTemplatePath;
     }
 
     public function setConfigurationNamespace(?string $configurationNamespace): self

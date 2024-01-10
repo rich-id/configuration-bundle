@@ -22,7 +22,6 @@ final class NewConfigurationGeneratorTest extends TestCase
 
     public function testGeneratorDefaultTemplate(): void
     {
-        $this->configurationAdapterStub->setConfigurationTemplatePath(null);
         $this->configurationAdapterStub->setConfigurationPath('/app/tests/Resources/Files/tmp');
 
         $path = ($this->newConfigurationGenerator)();
@@ -32,6 +31,10 @@ final class NewConfigurationGeneratorTest extends TestCase
 
     public function testGeneratorCustomTemplate(): void
     {
+        /** @var string $projectDir */
+        $projectDir = $this->parameterBag->get('kernel.project_dir');
+
+        $this->configurationAdapterStub->setConfigurationTemplatePath($projectDir . '/tests/Resources/configuration_template.php.txt');
         $this->configurationAdapterStub->setConfigurationPath('/app/tests/Resources/Files/tmp');
 
         $path = ($this->newConfigurationGenerator)();

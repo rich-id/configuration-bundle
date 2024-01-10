@@ -2,4 +2,3 @@ rich_id_configuration:
     configuration_namespace: 'RichId\ConfigurationBundle\Tests\Resources\Configurations'
     configuration_path: '%kernel.project_dir%/tests/Resources/Configurations'
     automatic_configuration_loader: 'after_migration_executed'
-    configuration_template_path: '%kernel.project_dir%/tests/Resources/configuration_template.php.txt'
