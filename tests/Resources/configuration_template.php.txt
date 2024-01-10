@@ -1,0 +1,14 @@
+<?php
+
+declare(strict_types=1);
+
+namespace <namespace>;
+
+use App\General\Infrastructure\Configuration\AbstractConfiguration;
+
+final class <className> extends AbstractConfiguration
+{
+    protected function execute(): void
+    {
+    }
+}

@@ -10,7 +10,7 @@ abstract class AbstractConfiguration implements ConfigurationInterface
 
     public function loadConfiguration(): bool
     {
-        if ($this->checkIsSkipped()) {
+        if (!$this->checkIsConcerned()) {
             return false;
         }
 
@@ -19,8 +19,8 @@ abstract class AbstractConfiguration implements ConfigurationInterface
         return true;
     }
 
-    protected function checkIsSkipped(): bool
+    protected function checkIsConcerned(): bool
     {
-        return false;
+        return true;
     }
 }

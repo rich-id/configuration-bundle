@@ -44,8 +44,29 @@ TEMPLATE;
 
         $path = \sprintf('%s/%s.php', $this->configuration->getConfigurationPath(), $className);
 
-        file_put_contents($path, \strtr(self::CONFIGURATION_TEMPLATE, $replacements));
+        file_put_contents($path, \strtr($this->getTemplate(), $replacements));
 
         return $path;
+    }
+
+    private function getTemplate(): string
+    {
+        $template = $this->configuration->getConfigurationTemplatePath();
+
+        if ($template === null) {
+            return self::CONFIGURATION_TEMPLATE;
+        }
+
+        if (!\is_file($template) || !\is_readable($template)) {
+            throw new \InvalidArgumentException(\sprintf('The specified template "%s" cannot be found or is not readable.', $template));
+        }
+
+        $content = file_get_contents($template);
+
+        if ($content === false || trim($content) === '') {
+            throw new \InvalidArgumentException(\sprintf('The specified template "%s" could not be read or is empty.', $template));
+        }
+
+        return $content;
     }
 }

@@ -17,6 +17,7 @@ class ConfigurationAdapterStub extends ConfigurationAdapter implements OverrideS
 
     private ?string $configurationNamespace = null;
     private ?string $configurationPath = null;
+    private ?string $configurationTemplatePath = null;
 
     public function getConfigurationNamespace(): string
     {
@@ -36,6 +37,15 @@ class ConfigurationAdapterStub extends ConfigurationAdapter implements OverrideS
         return $this->innerService->getConfigurationPath();
     }
 
+    public function getConfigurationTemplatePath(): string
+    {
+        if ($this->configurationTemplatePath !== null) {
+            return $this->configurationTemplatePath;
+        }
+
+        return $this->innerService->getConfigurationTemplatePath();
+    }
+
     public function setConfigurationNamespace(?string $configurationNamespace): self
     {
         $this->configurationNamespace = $configurationNamespace;
@@ -46,6 +56,13 @@ class ConfigurationAdapterStub extends ConfigurationAdapter implements OverrideS
     public function setConfigurationPath(?string $configurationPath): self
     {
         $this->configurationPath = $configurationPath;
+
+        return $this;
+    }
+
+    public function setConfigurationTemplatePath(?string $configurationTemplatePath): self
+    {
+        $this->configurationTemplatePath = $configurationTemplatePath;
 
         return $this;
     }

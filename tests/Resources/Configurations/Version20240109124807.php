@@ -8,9 +8,9 @@ use RichId\ConfigurationBundle\Domain\Configuration\AbstractConfiguration;
 
 final class Version20240109124807 extends AbstractConfiguration
 {
-    protected function checkIsSkipped(): bool
+    protected function checkIsConcerned(): bool
     {
-        return true;
+        return false;
     }
 
     protected function execute(): void

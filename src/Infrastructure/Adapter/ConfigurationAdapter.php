@@ -27,4 +27,11 @@ class ConfigurationAdapter implements ConfigurationInterface
 
         return \is_string($conf) ? $conf : throw new \InvalidArgumentException('Configuration "configuration_path" must be of type string.');
     }
+
+    public function getConfigurationTemplatePath(): ?string
+    {
+        $conf = Configuration::get('configuration_template_path', $this->parameterBag);
+
+        return $conf === null || \is_string($conf) ? $conf : throw new \InvalidArgumentException('Configuration "configuration_template_path" must be of type string or null.');
+    }
 }

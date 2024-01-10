@@ -19,13 +19,14 @@ class Configuration extends AbstractConfiguration
         $this->buildConfigurationNamespace($children);
         $this->buildConfigurationPath($children);
         $this->buildAutomaticConfigurationLoader($children);
+        $this->buildConfigurationTemplatePath($children);
     }
 
     protected function buildConfigurationNamespace(NodeBuilder $nodeBuilder): void
     {
         $nodeBuilder
             ->scalarNode('configuration_namespace')
-            ->isRequired()
+            ->cannotBeEmpty()
             ->defaultValue('Configurations')
             ->end();
     }
@@ -34,7 +35,7 @@ class Configuration extends AbstractConfiguration
     {
         $nodeBuilder
             ->scalarNode('configuration_path')
-            ->isRequired()
+            ->cannotBeEmpty()
             ->defaultValue('%kernel.project_dir%/configurations')
             ->end();
     }
@@ -43,7 +44,17 @@ class Configuration extends AbstractConfiguration
     {
         $nodeBuilder
             ->scalarNode('automatic_configuration_loader')
-            ->defaultValue(null)
+            ->cannotBeEmpty()
+            ->defaultNull()
+            ->end();
+    }
+
+    protected function buildConfigurationTemplatePath(NodeBuilder $nodeBuilder): void
+    {
+        $nodeBuilder
+            ->scalarNode('configuration_template_path')
+            ->cannotBeEmpty()
+            ->defaultNull()
             ->end();
     }
 }

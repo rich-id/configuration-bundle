@@ -9,4 +9,6 @@ interface ConfigurationInterface
     public function getConfigurationNamespace(): string;
 
     public function getConfigurationPath(): string;
+
+    public function getConfigurationTemplatePath(): ?string;
 }

@@ -23,4 +23,12 @@ final class ConfigurationInterfaceTest extends TestCase
     {
         self::assertStringContainsString('/tests/Resources/Configurations', $this->configuration->getConfigurationPath());
     }
+
+    public function testGetConfigurationTemplatePath(): void
+    {
+        $conf = $this->configuration->getConfigurationTemplatePath();
+
+        self::assertNotNull($conf);
+        self::assertStringContainsString('/tests/Resources/configuration_template.php.txt', $conf);
+    }
 }
