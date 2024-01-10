@@ -17,17 +17,17 @@
     },
     "require": {
         "php": "^8.0",
-        "doctrine/dbal": "^3.6",
+        "doctrine/dbal": "^3.3",
+        "doctrine/doctrine-bundle": "^2.4 <2.11.0",
         "doctrine/migrations": "^3.0",
         "doctrine/orm": "^2.7",
-        "doctrine/persistence": "^3.1",
+        "doctrine/persistence": "^2.0|^3.1",
         "richcongress/bundle-toolbox": "^1.1",
         "sensio/framework-extra-bundle": "^5.4|^6.0",
         "symfony/config": "^5.4",
         "symfony/console": "^5.4",
-        "symfony/event-dispatcher": "^5.4",
         "symfony/dependency-injection": "^5.4",
-        "doctrine/doctrine-bundle": "^2.4 <2.11.0"
+        "symfony/event-dispatcher": "^5.4"
     },
     "require-dev": {
         "maglnet/composer-require-checker": "^3.0",
