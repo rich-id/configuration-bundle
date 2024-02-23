@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace RichId\ConfigurationBundle\Tests\Domain\Configuration;
 
-use RichCongress\TestFramework\TestConfiguration\Annotation\TestConfig;
+use RichCongress\TestFramework\TestConfiguration\Attribute\TestConfig;
 use RichCongress\TestSuite\TestCase\TestCase;
 use RichId\ConfigurationBundle\Domain\Configuration\ConfigurationManager;
 use RichId\ConfigurationBundle\Domain\Entity\ConfigurationVersion;

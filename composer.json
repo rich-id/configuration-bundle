@@ -3,6 +3,8 @@
     "description": "Configuration bundle",
     "type": "symfony-bundle",
     "license": "MIT",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "authors": [
         {
             "name": "RichId",
@@ -16,24 +18,23 @@
         "issues": "https://github.com/rich-id/configuration-bundle/issues"
     },
     "require": {
-        "php": "^8.0",
+        "php": "^8.1",
         "doctrine/dbal": "^3.3",
-        "doctrine/doctrine-bundle": "^2.4 <2.11.0",
+        "doctrine/doctrine-bundle": "^2.4",
         "doctrine/migrations": "^3.0",
-        "doctrine/orm": "^2.7",
-        "doctrine/persistence": "^2.0|^3.1",
-        "richcongress/bundle-toolbox": "^1.1",
-        "sensio/framework-extra-bundle": "^5.4|^6.0",
-        "symfony/config": "^5.4",
-        "symfony/console": "^5.4",
-        "symfony/dependency-injection": "^5.4",
-        "symfony/event-dispatcher": "^5.4"
+        "doctrine/orm": "^2.7 || ^3.0",
+        "doctrine/persistence": "^2.0 || ^3.1",
+        "richcongress/bundle-toolbox": "v2.x-dev",
+        "symfony/config": "^5.4 || ^6.0 || ^7.0",
+        "symfony/console": "^5.4 || ^6.0 || ^7.0",
+        "symfony/dependency-injection": "^5.4 || ^6.0 || ^7.0",
+        "symfony/event-dispatcher": "^5.4 || ^6.0 || ^7.0"
     },
     "require-dev": {
-        "maglnet/composer-require-checker": "^3.0",
+        "maglnet/composer-require-checker": "^3.0 || ^4.0",
         "phpunit/phpunit": "^9.5",
-        "richcongress/static-analysis": "^0.1",
-        "richcongress/test-suite": "^0.1",
+        "richcongress/static-analysis": "v0.2.x-dev",
+        "richcongress/test-suite": "v0.2.x-dev",
         "roave/security-advisories": "dev-latest"
     },
     "autoload": {
@@ -48,7 +49,10 @@
     },
     "config": {
         "discard-changes": true,
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
     },
     "scripts": {
         "post-install-cmd": [

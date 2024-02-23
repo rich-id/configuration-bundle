@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace RichId\ConfigurationBundle\Tests\UserInterface\Command;
 
-use RichCongress\TestFramework\TestConfiguration\Annotation\TestConfig;
+use RichCongress\TestFramework\TestConfiguration\Attribute\TestConfig;
 use RichCongress\TestSuite\TestCase\CommandTestCase;
 use RichId\ConfigurationBundle\Tests\Resources\Stub\ConfigurationAdapterStub;
 use RichId\ConfigurationBundle\UserInterface\Command\ConfigurationGenerateCommand;

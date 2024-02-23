@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace RichId\ConfigurationBundle\Tests\Domain\EventListener;
 
-use RichCongress\TestFramework\TestConfiguration\Annotation\TestConfig;
+use RichCongress\TestFramework\TestConfiguration\Attribute\TestConfig;
 use RichCongress\TestSuite\TestCase\CommandTestCase;
 use RichId\ConfigurationBundle\Domain\Entity\ConfigurationVersion;
 use RichId\ConfigurationBundle\Domain\EventListener\LoadConfigurationsAfterMigrationExecutedListener;
